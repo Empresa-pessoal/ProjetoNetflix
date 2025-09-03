@@ -153,3 +153,9 @@ body{
 .btn-proximo{
     right: 0;
 }
+
+footer{
+    background: black;
+    padding: 20px;
+    text-align: center;
+}
