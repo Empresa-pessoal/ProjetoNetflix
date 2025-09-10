@@ -1,22 +1,50 @@
-// DECLARANDO AS VARIAVEIS COM DOM (DOCUMENT MODEL OBJECT)
-const carrosselLista = document.querySelector(".carrossel-lista");
-const carrosselItem = document.querySelectorAll(".carrossel-item");
-const botaoAnterior =document.getElementsByClassName("btn-anterior");
-const botaoProximo =document.getElementsByClassName("btn-proximo");
+// array de objetos com as imagens e informações do banner
+const bannerItems = [
+    {
+        imagem: "../assets/Game1.jpg",
+        titulo: "Titulo do filme 1",
+        descricao: "Filme 1",
+    },
+    {
+        imagem: "../assets/Game2.jpg",
+        titulo: "Titulo do filme 2",
+        descricao: "Filme 2",
+    },
+    {
+        imagem: "../assets/Game3.jpg",
+        titulo: "Titulo do filme 3",
+        descricao: "Filme 3",
+    },
+];
 
-let contador=0;
-const larguraItem=carrosselItem[0].offsetWitdh +10;// largura do item + margem
+// declarando as variáveis e elements com dom(document object model)
+const tempo = 5000; // em milissegundos
+const elementoBanner = document.querySelector(".banner");
+const elementoTitulo = document.querySelector(".banner-titulo");
+const elementoDescricao = document.querySelector(".banner-descricao");
+let i = 0; // inicio da contagem das imagens
 
-botaoProximo.addEventListener("click",()=>{
-    if(contador <carrosselItem.length -1){
-        contador++;
-        carrosselLista.style.transform =`translateX(-${contador * larguraItem}px)`;
+// funcao para o slide show
+function slideShow(){
+    // altera a imagem de fundo do banner
+    // `` template strings ou string literais. Forma de concatenar
+    elementoBanner.style.backgroundImage = `url(${bannerItems[i].imagem}/)`;
+    
+    // altera o titulo do banner
+    elementoBanner.textContent = bannerItems[i].titulo;
+    elementoDescricao.textContent = bannerItems[i].descricao;
+
+    // incrementa o índice(i) e reinicia quando chegar no final do array
+    i++;
+
+    // se i for maior que a quantidade de objetos no bannerItem, volta pra 0
+    if (i > bannerItems.length) {
+        i = 0;
     }
-})
 
-botaoAnterior.addEventListener("click",()=>{
-    if(contador > 0){
-        contador--;
-        carrosselLista.style.transform =`translateX(-${contador * larguraItem}px)`;
-    }
-})
+    // chama  função novamente após o tempo definido
+    setTimeout(slideShow, tempo);
+}
+
+// inicia a função
+slideShow();

@@ -56,8 +56,7 @@ body{
     position: relative;
 }
 
-/* pseudo elements executa uma ação antes */
-.banner::before{
+.banner-overlay{
     content: "";
     position: absolute;
     top: 0;
@@ -69,6 +68,8 @@ body{
     /* garante que a camada de sobreposição fique sob a imagem */
     z-index: 1;
 }
+
+/* pseudo elements executa uma ação antes */
 
 .banner-conteudo{
     width: 600px;
@@ -135,6 +136,8 @@ body{
     min-width: 200;
     padding: 10px;
 }
+
+
 
 .btn-carrossel{
     position: absolute;
