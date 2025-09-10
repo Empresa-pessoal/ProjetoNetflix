@@ -1,17 +1,17 @@
 // array de objetos com as imagens e informações do banner
 const bannerItems = [
     {
-        imagem: "../assets/Game1.jpg",
+        imagem: "./src/assets/Game1.jpg",
         titulo: "Titulo do filme 1",
         descricao: "Filme 1",
     },
     {
-        imagem: "../assets/Game2.jpg",
+        imagem: "./src/assets/Game2.jpg",
         titulo: "Titulo do filme 2",
         descricao: "Filme 2",
     },
     {
-        imagem: "../assets/Game3.jpg",
+        imagem: "./src/assets/Game3.jpg",
         titulo: "Titulo do filme 3",
         descricao: "Filme 3",
     },
@@ -28,7 +28,7 @@ let i = 0; // inicio da contagem das imagens
 function slideShow(){
     // altera a imagem de fundo do banner
     // `` template strings ou string literais. Forma de concatenar
-    elementoBanner.style.backgroundImage = `url(${bannerItems[i].imagem}/)`;
+    elementoBanner.style.backgroundImage = `url(${bannerItems[i].imagem})`;
     
     // altera o titulo do banner
     elementoBanner.textContent = bannerItems[i].titulo;
@@ -38,7 +38,7 @@ function slideShow(){
     i++;
 
     // se i for maior que a quantidade de objetos no bannerItem, volta pra 0
-    if (i > bannerItems.length) {
+    if (i >= bannerItems.length) {
         i = 0;
     }
 
