@@ -31,7 +31,7 @@ function slideShow(){
     elementoBanner.style.backgroundImage = `url(${bannerItems[i].imagem})`;
     
     // altera o titulo do banner
-    elementoBanner.textContent = bannerItems[i].titulo;
+    elementoTitulo.textContent = bannerItems[i].titulo;
     elementoDescricao.textContent = bannerItems[i].descricao;
 
     // incrementa o índice(i) e reinicia quando chegar no final do array
