@@ -146,7 +146,7 @@ body{
 }
 
 .carrossel-item{
-    min-width: 200;
+    min-width: 200px;
     padding: 10px;
 }
 
@@ -175,5 +175,75 @@ footer{
     padding: 20px;
     text-align: center;
 }
+
+/* perfis */
+header{
+    width: 100%;
+    height: 70px;
+    background: #1A1D1F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; /* controla o espaçamento */
+}
+
+#logo{
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+.btn{
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+    border-radius: 20px;
+    background: #F2A341;
+    color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+/* seção de perfis */
+#perfil{
+    width: 100%;
+    min-height: 555px; /* min height para flexibilidade */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    padding: 20px 0;
+}
+
+.perfis-container{
+    width: 90%;
+    max-width: 900px; /* define um máximo pra nao quebrar tudo em tela grande */
+    display: flex; /* faz os bagulho quebrar pra proxima linha */
+    flex-wrap: wrap; /* centraliza */
+    gap: 20px; /* espaçamento entre perfis */
+}
+
+.perfil-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.perfil-card h3{
+    color: #FFF;
+    font-size: 20px;
+    margin-top: 10px; /* espaçamento entre imagem e nome */
+}
+
+.perfil-img{
+    width: 120px;
+    height: 120px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    object-fit: cover; /* Recorta a imagem para preencher o contâiner sem distorcer */
+}
+
+
 
 /* responsividade */
